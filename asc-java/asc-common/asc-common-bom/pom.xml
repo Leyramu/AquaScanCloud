@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2024 Leyramu. All rights reserved.
+  ~ This project (Digitalization Education), including its source code, documentation, and any associated materials, is the intellectual property of Leyramu. No part of this software may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the copyright owner, Miraitowa_zcx, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+  ~ For inquiries related to licensing or usage outside the scope of this notice, please contact the copyright holder at 2038322151@qq.com.
+  ~ The author disclaims all warranties, express or implied, including but not limited to the warranties of merchantability and fitness for a particular purpose. Under no circumstances shall the author be liable for any special, incidental, indirect, or consequential damages arising from the use of this software.
+  ~ By using this project, users acknowledge and agree to abide by these terms and conditions.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--      模块版本号      -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--      组织 ID      -->
+    <groupId>org.qinian</groupId>
+
+    <!--      工件 ID      -->
+    <artifactId>asc-common-bom</artifactId>
+
+    <!--      版本号      -->
+    <version>1.0.0</version>
+
+    <!--      打包方式      -->
+    <packaging>pom</packaging>
+
+    <!--      模块描述      -->
+    <description>管理所有微服务业务依赖</description>
+
+    <!--      属性      -->
+    <properties>
+        <poi.version>5.3.0</poi.version>
+        <jjwt.version>0.12.6</jjwt.version>
+        <druid.version>1.2.23</druid.version>
+        <minio.version>8.5.11</minio.version>
+        <tobato.version>1.27.2</tobato.version>
+        <velocity.version>2.3</velocity.version>
+        <kaptcha.version>2.3.3</kaptcha.version>
+        <fastjson.version>2.0.52</fastjson.version>
+        <redisson.version>3.18.0</redisson.version>
+        <redisson.version>3.33.0</redisson.version>
+        <dynamic-ds.version>4.3.1</dynamic-ds.version>
+        <commons.io.version>2.16.1</commons.io.version>
+        <swagger.fox.version>3.0.0</swagger.fox.version>
+        <qinian-cloud.version>1.0.0</qinian-cloud.version>
+        <mybatis-plus.version>3.5.7</mybatis-plus.version>
+        <swagger.core.version>2.2.20</swagger.core.version>
+        <pagehelper.boot.version>2.1.0</pagehelper.boot.version>
+        <transmittable-thread-local.version>2.14.5</transmittable-thread-local.version>
+    </properties>
+
+    <!--     Spring Cloud 依赖管理     -->
+    <dependencyManagement>
+        <dependencies>
+            <!--    Swagger    -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.fox.version}</version>
+            </dependency>
+
+            <!--    Swagger UI    -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.fox.version}</version>
+            </dependency>
+
+            <!--    Swagger Models    -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>2.1.2</version>
+            </dependency>
+
+            <!--    Swagger Annotations    -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+
+            <!--    Spring Boot Swagger    -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger.fox.version}</version>
+            </dependency>
+
+            <!--    FastDFS 分布式文件系统    -->
+            <dependency>
+                <groupId>com.github.tobato</groupId>
+                <artifactId>fastdfs-client</artifactId>
+                <version>${tobato.version}</version>
+            </dependency>
+
+            <!--     Minio     -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <!--    验证码    -->
+            <dependency>
+                <groupId>pro.fessional</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+
+            <!--    MyBatis Plus    -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!--    io 常用工具类    -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <!--    excel 工具    -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!--    代码生成使用模板    -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!--    JSON 解析器和生成器    -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--    JWT API    -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!--    JWT Impl    -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!--    JWT Jackson    -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!--    线程传递值    -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <!--    Druid    -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!--    Dynamic DataSource    -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>${dynamic-ds.version}</version>
+            </dependency>
+
+            <!--    Redisson    -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <!--      =====================================================      -->
+            <!--                                                项目模块管理                                             -->
+            <!--      =====================================================      -->
+
+            <!--    Asc API    -->
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-api-domain</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-api-system</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <!--    Asc Cloud    -->
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-cloud-seata</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-admin-cloud</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <!--    Asc Common    -->
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-common-utils</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <!--    Asc Gateway    -->
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-gateway-api</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <!--    Asc Service    -->
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-alert-service</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-algorithm-service</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-fishRaft-service</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-raftMonitor-service</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-user-service</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.qinian</groupId>
+                <artifactId>asc-weather-service</artifactId>
+                <version>${qinian-cloud.version}</version>
+            </dependency>
+
+
+            <!--            &lt;!&ndash;    核心模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-core</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    Swagger 接口模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-swagger</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    系统接口模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-api-system</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    学生接口模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-api-student</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    权限接口    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-api-permission</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    教师接口    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-api-teacher</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    安全模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-security</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    Redis 模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-redis</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    基本模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-base</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    算法模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-algorithm</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    数据源模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-datasource</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    数据范围模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-datascope</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            &lt;!&ndash;    日志模块    &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>leyramu.softwarecup</groupId>-->
+            <!--                <artifactId>digEdu-common-log</artifactId>-->
+            <!--                <version>${leyramu-digEdu.version}</version>-->
+            <!--            </dependency>-->
+        </dependencies>
+    </dependencyManagement>
+</project>

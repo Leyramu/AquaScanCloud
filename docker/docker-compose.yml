@@ -1,0 +1,76 @@
+#  Copyright (c) 2024 Leyramu. All rights reserved.
+#  This project (Digitalization Education), including its source code, documentation, and any associated materials, is the intellectual property of Leyramu. No part of this software may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the copyright owner, Miraitowa_zcx, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+#  For inquiries related to licensing or usage outside the scope of this notice, please contact the copyright holder at 2038322151@qq.com.
+#  The author disclaims all warranties, express or implied, including but not limited to the warranties of merchantability and fitness for a particular purpose. Under no circumstances shall the author be liable for any special, incidental, indirect, or consequential damages arising from the use of this software.
+#  By using this project, users acknowledge and agree to abide by these terms and conditions.
+
+
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: asc-mysql
+    build:
+      context: ./mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Zcx@223852//
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/logs:/logs
+      - ./mysql/data:/var/lib/mysql
+    command: [
+      'mysqld',
+      '--innodb-buffer-pool-size=80M',
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_unicode_ci',
+      '--default-time-zone=+8:00',
+      '--lower-case-table-names=1'
+    ]
+    network_mode: bridge
+  redis:
+    image: redis:latest
+    container_name: asc-redis
+    build:
+      context: ./redis
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/conf:/home/redis/redis.conf
+      - ./redis/data:/data
+    command: redis-server /home/redis/redis.conf --appendonly yes --requirepass 'Zcx@223852//'
+    network_mode: bridge
+  rocketmq-namesrv:
+    image: apache/rocketmq:5.2.0
+    container_name: asc-rocketmq-namesrv
+    tty: true
+    privileged: true
+    ports:
+      - "9876:9876"
+    command: sh mqnamesrv
+    environment:
+      - JAVA_OPT_EXT=-server -Xmx512m -Xms512m -Xmn256m
+      - TZ=Asia/Shanghai
+    network_mode: bridge
+  rocketmq-broker:
+    image: apache/rocketmq:5.2.0
+    container_name: asc-rocketmq-broker
+    tty: true
+    privileged: true
+    ports:
+      - "8081:8081"
+      - "10911:10911"
+      - "10909:10909"
+      - "10912:10912"
+    command: sh mqbroker -n localhost:9876 -c /home/rocketmq/conf/broker.conf autoCreateTopicEnable=true
+    environment:
+      - JAVA_OPT_EXT=-server -Xmx512m -Xms512m -Xmn256m
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./rocketmq/broker/conf/broker.conf:/home/rocketmq/conf/broker.conf
+    network_mode: bridge
+    depends_on:
+      - rocketmq-namesrv

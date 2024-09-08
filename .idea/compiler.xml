@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="asc-cloud-seata" />
+        <module name="asc-common-utils" />
+        <module name="asc-weather-service" />
+        <module name="asc-api-domain" />
+        <module name="asc-email-service" />
+        <module name="asc-algorithm-service" />
+        <module name="asc-raftMonitor-service" />
+        <module name="asc-cloud-register" />
+        <module name="asc-gateway-api" />
+        <module name="asc-fishRaft-service" />
+        <module name="asc-alert-service" />
+        <module name="asc-user-service" />
+        <module name="asc-visual-monitor" />
+        <module name="asc-cloud-sentinel" />
+        <module name="asc-api-system" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="asc-admin-cloud" target="22" />
+      <module name="digEdu-cloud-sentinel" target="17" />
+      <module name="digEdu-visual" target="1.5" />
+      <module name="digEdu-visual-monitor" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="asc-admin-cloud" options="" />
+      <module name="asc-alert-service" options="" />
+      <module name="asc-algorithm-service" options="" />
+      <module name="asc-api-domain" options="" />
+      <module name="asc-api-system" options="" />
+      <module name="asc-cloud-seata" options="" />
+      <module name="asc-cloud-sentinel" options="-Xlint:deprecation -parameters" />
+      <module name="asc-common-utils" options="" />
+      <module name="asc-email-service" options="" />
+      <module name="asc-fishRaft-service" options="" />
+      <module name="asc-gateway-api" options="" />
+      <module name="asc-raftMonitor-service" options="" />
+      <module name="asc-user-service" options="" />
+      <module name="asc-weather-service" options="" />
+      <module name="digEdu-cloud-sentinel" options="-parameters -Xlint:deprecation -parameters" />
+    </option>
+  </component>
+</project>

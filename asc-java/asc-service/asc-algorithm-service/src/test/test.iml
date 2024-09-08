@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="asc-user-service" />
+    <orderEntry type="module" module-name="asc-gateway" />
+    <orderEntry type="module" module-name="asc-fishRaft-service" />
+    <orderEntry type="module" module-name="asc-admin-cloud" />
+    <orderEntry type="module" module-name="asc-raftMonitor-service" />
+    <orderEntry type="module" module-name="asc-weather-service" />
+    <orderEntry type="module" module-name="asc-seata-cloud" />
+    <orderEntry type="module" module-name="main" />
+    <orderEntry type="module" module-name="asc-common" />
+    <orderEntry type="module" module-name="asc-alert-service" />
+    <orderEntry type="module" module-name="asc-email-service" />
+  </component>
+</module>

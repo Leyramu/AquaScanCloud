@@ -1,0 +1,41 @@
+# 系统环境配置文件
+/.jdks/
+/.idea/workspace.xml
+
+
+# gateway 模块 target 目标文件
+/asc-java/asc-gateway/asc-gateway-api/target/
+
+# service 模块 target 目标文件
+/asc-java/asc-service/asc-user-service/target/
+/asc-java/asc-service/asc-algorithm-service/target/
+/asc-java/asc-service/asc-alert-service/target/
+
+# api 模块 target 目标文件
+/asc-java/asc-api/asc-api-domain/target/
+/asc-java/asc-api/asc-api-system/target/
+
+# common 模块 target 目标文件
+/asc-java/asc-common/asc-common-utils/target/
+
+# cloud 模块 target 目标文件
+/asc-java/asc-cloud/asc-cloud-register/target/
+/asc-java/asc-cloud/asc-cloud-seata/target/
+/asc-java/asc-cloud/asc-cloud-sentinel/target/
+
+# monitor 模块 target 目标文件
+/asc-java/asc-visual/asc-visual-monitor/target/
+
+# 文件目录
+/files/
+
+# docker 容器
+/docker/redis/
+/docker/mysql/
+
+# 临时文件
+/work/
+
+# 日志文件
+/logs/
+/derby.log
