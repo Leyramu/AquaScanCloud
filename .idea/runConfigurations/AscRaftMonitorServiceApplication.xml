@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AscRaftMonitorServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="asc-raftMonitor-service" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="org.leyramu.AscRaftMonitorServiceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
