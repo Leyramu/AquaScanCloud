@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AscSystemServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="asc-service-system" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="leyramu.qinian.asc.system.AscSystemServiceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

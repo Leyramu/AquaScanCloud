@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AscAlertServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="asc-alert-service" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="org.leyramu.AscAlertServiceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

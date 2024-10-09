@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AscWeatherServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="asc-weather-service" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="org.leyramu.AscWeatherServiceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
