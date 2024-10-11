@@ -1,4 +1,4 @@
-package org.qinian;
+package org.leyramu;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
